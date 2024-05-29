@@ -19,17 +19,15 @@
   </template>
 </template>
 
-<script setup>
-import { computed, ref } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
+import { TNode } from "@/shared/types";
 
-const props = defineProps({
-  node: Object,
-  nodes: Array,
-  expandedNodes: {
-    type: Object,
-    default: () => new Set(),
-  },
-});
+const props = defineProps<{
+  node: TNode;
+  nodes: TNode[];
+  expandedNodes: Set<string>;
+}>();
 
 const childNodes = computed(() =>
   props.nodes.filter((n) => n.parent_id === props.node.id)
@@ -63,7 +61,7 @@ const level = computed(() => {
   let level = 0;
   while (parent.parent_id !== null) {
     level++;
-    parent = props.nodes.find((node) => node.id === parent.parent_id);
+    parent = props.nodes.find((node) => node.id === parent.parent_id)!;
   }
   return level;
 });

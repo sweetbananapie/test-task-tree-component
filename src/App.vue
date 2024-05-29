@@ -17,13 +17,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import { http } from "./shared/api/http";
 import TreeNode from "./shared/components/TreeNode.vue";
+import { TNode } from "./shared/types";
 
-const nodes = ref([]);
-const expandedNodes = ref(new Set());
+const nodes = ref<TNode[]>([]);
+
+const expandedNodes = ref(new Set<string>());
 
 onMounted(async () => {
   const { data } = await http.get("/tree/items");
