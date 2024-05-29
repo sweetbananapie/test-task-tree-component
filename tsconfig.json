@@ -18,7 +18,6 @@
     /* Bundler mode */
     "moduleResolution": "Bundler",
     "types": [
-      "unplugin-vue-router/client"
     ],
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
