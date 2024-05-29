@@ -1,0 +1,36 @@
+.fade-enter-active {
+  transition: opacity 0.5s 0.5s;
+}
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-from, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.no-selection {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.TreeNode {
+  padding: 10px;
+  background: rgb(246 246 247);
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.TreeNode:nth-child(odd) {
+  padding: 10px;
+  background: rgb(255, 255, 255);
+}
+.TreeNode:hover {
+  background: rgb(232, 232, 235);
+}
